@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painting │ BNSC </title>
+  <link rel="icon" href="logo.png" type="x-icon">
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- header section starts  -->
+
+  <header class="header">
+
+
+    <a href="https://beanicole.github.io/artgallery/" class="logo">
+      <img src="back_btn.png">
+
+
+      <nav class="navbar">
+        <a href="#"> Painting O3</a>
+      </nav>
+    </a>
+  </header>
+
+  <div class="gallery">
+
+    <ul class="controls">
+      <li class="buttons active" data-filter="all">all</li>
+    </ul>
+
+    <div class="image-container">
+     <a href="" class="image all">
+        <img src="uploading.png" alt="">
+      </a>
+      <a href="" class="image all">
+        <img src="C1_BNSC.JPG" alt="">
+      </a>
+          <a href="" class="image all">
+        <img src="C2_BNSC.jpg" alt="">
+      </a>
+      <a href="" class="image all">
+        <img src="C3_BNSC.JPG" alt="">
+      </a>
+    </div>
+
+  </div>
+
+  <!-- jquery cdn link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- magnific popup js cdn link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+  <script>
+
+    $(document).ready(function () {
+
+      $('.buttons').click(function () {
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if (filter == 'all') {
+          $('.image').show(400);
+        } else {
+          $('.image').not('.' + filter).hide(200);
+          $('.image').filter('.' + filter).show(400);
+        }
+
+      });
+
+      $('.gallery').magnificPopup({
+
+        delegate: 'a',
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+
+      });
+
+    });
+
+  </script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
